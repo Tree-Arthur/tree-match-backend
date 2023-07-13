@@ -1,0 +1,29 @@
+spring:
+  # DataSource Config
+  datasource:
+    url: jdbc:mysql://localhost:3306/tree?serverTimezone=Asia/Shanghai
+    username: root
+    password: hsf130834
+    driver-class-name: com.mysql.jdbc.Driver
+  #session 失效时间
+  session:
+    timeout: 86400
+    store-type: redis
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+  #redis 配置
+  redis:
+    port: 6379
+    host: 43.138.192.49
+    database: 1
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+    session:
+      cookie:
+        domain: 43.138.192.49 #设置cookie作用域
+#        same-site: none
+#        secure: true
